@@ -9,6 +9,7 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as SignupRouteImport } from './routes/signup'
 import { Route as LoginRouteImport } from './routes/login'
 import { Route as AppRouteImport } from './routes/app'
@@ -26,6 +27,11 @@ import { Route as AppFinanceRouteImport } from './routes/app.finance'
 import { Route as AppCommunityRouteImport } from './routes/app.community'
 import { Route as AppBackpackRouteImport } from './routes/app.backpack'
 
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const SignupRoute = SignupRouteImport.update({
   id: '/signup',
   path: '/signup',
@@ -112,6 +118,7 @@ export interface FileRoutesByFullPath {
   '/app': typeof AppRouteWithChildren
   '/login': typeof LoginRoute
   '/signup': typeof SignupRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/app/backpack': typeof AppBackpackRoute
   '/app/community': typeof AppCommunityRoute
   '/app/finance': typeof AppFinanceRoute
@@ -129,6 +136,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/login': typeof LoginRoute
   '/signup': typeof SignupRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/app/backpack': typeof AppBackpackRoute
   '/app/community': typeof AppCommunityRoute
   '/app/finance': typeof AppFinanceRoute
@@ -148,6 +156,7 @@ export interface FileRoutesById {
   '/app': typeof AppRouteWithChildren
   '/login': typeof LoginRoute
   '/signup': typeof SignupRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/app/backpack': typeof AppBackpackRoute
   '/app/community': typeof AppCommunityRoute
   '/app/finance': typeof AppFinanceRoute
@@ -168,6 +177,7 @@ export interface FileRouteTypes {
     | '/app'
     | '/login'
     | '/signup'
+    | '/sitemap.xml'
     | '/app/backpack'
     | '/app/community'
     | '/app/finance'
@@ -185,6 +195,7 @@ export interface FileRouteTypes {
     | '/'
     | '/login'
     | '/signup'
+    | '/sitemap.xml'
     | '/app/backpack'
     | '/app/community'
     | '/app/finance'
@@ -203,6 +214,7 @@ export interface FileRouteTypes {
     | '/app'
     | '/login'
     | '/signup'
+    | '/sitemap.xml'
     | '/app/backpack'
     | '/app/community'
     | '/app/finance'
@@ -222,10 +234,18 @@ export interface RootRouteChildren {
   AppRoute: typeof AppRouteWithChildren
   LoginRoute: typeof LoginRoute
   SignupRoute: typeof SignupRoute
+  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/signup': {
       id: '/signup'
       path: '/signup'
@@ -378,6 +398,7 @@ const rootRouteChildren: RootRouteChildren = {
   AppRoute: AppRouteWithChildren,
   LoginRoute: LoginRoute,
   SignupRoute: SignupRoute,
+  SitemapDotxmlRoute: SitemapDotxmlRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
