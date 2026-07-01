@@ -9,38 +9,264 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as SignupRouteImport } from './routes/signup'
+import { Route as LoginRouteImport } from './routes/login'
+import { Route as AppRouteImport } from './routes/app'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AppIndexRouteImport } from './routes/app.index'
+import { Route as AppTripsRouteImport } from './routes/app.trips'
+import { Route as AppTransportRouteImport } from './routes/app.transport'
+import { Route as AppSettingsRouteImport } from './routes/app.settings'
+import { Route as AppPlanRouteImport } from './routes/app.plan'
+import { Route as AppNewsRouteImport } from './routes/app.news'
+import { Route as AppMapsRouteImport } from './routes/app.maps'
+import { Route as AppHotelsRouteImport } from './routes/app.hotels'
+import { Route as AppFlightsRouteImport } from './routes/app.flights'
+import { Route as AppFinanceRouteImport } from './routes/app.finance'
+import { Route as AppCommunityRouteImport } from './routes/app.community'
+import { Route as AppBackpackRouteImport } from './routes/app.backpack'
 
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SignupRoute = SignupRouteImport.update({
+  id: '/signup',
+  path: '/signup',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LoginRoute = LoginRouteImport.update({
+  id: '/login',
+  path: '/login',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AppRoute = AppRouteImport.update({
+  id: '/app',
+  path: '/app',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AppIndexRoute = AppIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppTripsRoute = AppTripsRouteImport.update({
+  id: '/trips',
+  path: '/trips',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppTransportRoute = AppTransportRouteImport.update({
+  id: '/transport',
+  path: '/transport',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppSettingsRoute = AppSettingsRouteImport.update({
+  id: '/settings',
+  path: '/settings',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppPlanRoute = AppPlanRouteImport.update({
+  id: '/plan',
+  path: '/plan',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppNewsRoute = AppNewsRouteImport.update({
+  id: '/news',
+  path: '/news',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppMapsRoute = AppMapsRouteImport.update({
+  id: '/maps',
+  path: '/maps',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppHotelsRoute = AppHotelsRouteImport.update({
+  id: '/hotels',
+  path: '/hotels',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppFlightsRoute = AppFlightsRouteImport.update({
+  id: '/flights',
+  path: '/flights',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppFinanceRoute = AppFinanceRouteImport.update({
+  id: '/finance',
+  path: '/finance',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppCommunityRoute = AppCommunityRouteImport.update({
+  id: '/community',
+  path: '/community',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppBackpackRoute = AppBackpackRouteImport.update({
+  id: '/backpack',
+  path: '/backpack',
+  getParentRoute: () => AppRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/app': typeof AppRouteWithChildren
+  '/login': typeof LoginRoute
+  '/signup': typeof SignupRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/app/backpack': typeof AppBackpackRoute
+  '/app/community': typeof AppCommunityRoute
+  '/app/finance': typeof AppFinanceRoute
+  '/app/flights': typeof AppFlightsRoute
+  '/app/hotels': typeof AppHotelsRoute
+  '/app/maps': typeof AppMapsRoute
+  '/app/news': typeof AppNewsRoute
+  '/app/plan': typeof AppPlanRoute
+  '/app/settings': typeof AppSettingsRoute
+  '/app/transport': typeof AppTransportRoute
+  '/app/trips': typeof AppTripsRoute
+  '/app/': typeof AppIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/login': typeof LoginRoute
+  '/signup': typeof SignupRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/app/backpack': typeof AppBackpackRoute
+  '/app/community': typeof AppCommunityRoute
+  '/app/finance': typeof AppFinanceRoute
+  '/app/flights': typeof AppFlightsRoute
+  '/app/hotels': typeof AppHotelsRoute
+  '/app/maps': typeof AppMapsRoute
+  '/app/news': typeof AppNewsRoute
+  '/app/plan': typeof AppPlanRoute
+  '/app/settings': typeof AppSettingsRoute
+  '/app/transport': typeof AppTransportRoute
+  '/app/trips': typeof AppTripsRoute
+  '/app': typeof AppIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/app': typeof AppRouteWithChildren
+  '/login': typeof LoginRoute
+  '/signup': typeof SignupRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/app/backpack': typeof AppBackpackRoute
+  '/app/community': typeof AppCommunityRoute
+  '/app/finance': typeof AppFinanceRoute
+  '/app/flights': typeof AppFlightsRoute
+  '/app/hotels': typeof AppHotelsRoute
+  '/app/maps': typeof AppMapsRoute
+  '/app/news': typeof AppNewsRoute
+  '/app/plan': typeof AppPlanRoute
+  '/app/settings': typeof AppSettingsRoute
+  '/app/transport': typeof AppTransportRoute
+  '/app/trips': typeof AppTripsRoute
+  '/app/': typeof AppIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/app'
+    | '/login'
+    | '/signup'
+    | '/sitemap.xml'
+    | '/app/backpack'
+    | '/app/community'
+    | '/app/finance'
+    | '/app/flights'
+    | '/app/hotels'
+    | '/app/maps'
+    | '/app/news'
+    | '/app/plan'
+    | '/app/settings'
+    | '/app/transport'
+    | '/app/trips'
+    | '/app/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/login'
+    | '/signup'
+    | '/sitemap.xml'
+    | '/app/backpack'
+    | '/app/community'
+    | '/app/finance'
+    | '/app/flights'
+    | '/app/hotels'
+    | '/app/maps'
+    | '/app/news'
+    | '/app/plan'
+    | '/app/settings'
+    | '/app/transport'
+    | '/app/trips'
+    | '/app'
+  id:
+    | '__root__'
+    | '/'
+    | '/app'
+    | '/login'
+    | '/signup'
+    | '/sitemap.xml'
+    | '/app/backpack'
+    | '/app/community'
+    | '/app/finance'
+    | '/app/flights'
+    | '/app/hotels'
+    | '/app/maps'
+    | '/app/news'
+    | '/app/plan'
+    | '/app/settings'
+    | '/app/transport'
+    | '/app/trips'
+    | '/app/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AppRoute: typeof AppRouteWithChildren
+  LoginRoute: typeof LoginRoute
+  SignupRoute: typeof SignupRoute
+  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/signup': {
+      id: '/signup'
+      path: '/signup'
+      fullPath: '/signup'
+      preLoaderRoute: typeof SignupRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/login': {
+      id: '/login'
+      path: '/login'
+      fullPath: '/login'
+      preLoaderRoute: typeof LoginRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/app': {
+      id: '/app'
+      path: '/app'
+      fullPath: '/app'
+      preLoaderRoute: typeof AppRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -48,11 +274,131 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/app/': {
+      id: '/app/'
+      path: '/'
+      fullPath: '/app/'
+      preLoaderRoute: typeof AppIndexRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/trips': {
+      id: '/app/trips'
+      path: '/trips'
+      fullPath: '/app/trips'
+      preLoaderRoute: typeof AppTripsRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/transport': {
+      id: '/app/transport'
+      path: '/transport'
+      fullPath: '/app/transport'
+      preLoaderRoute: typeof AppTransportRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/settings': {
+      id: '/app/settings'
+      path: '/settings'
+      fullPath: '/app/settings'
+      preLoaderRoute: typeof AppSettingsRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/plan': {
+      id: '/app/plan'
+      path: '/plan'
+      fullPath: '/app/plan'
+      preLoaderRoute: typeof AppPlanRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/news': {
+      id: '/app/news'
+      path: '/news'
+      fullPath: '/app/news'
+      preLoaderRoute: typeof AppNewsRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/maps': {
+      id: '/app/maps'
+      path: '/maps'
+      fullPath: '/app/maps'
+      preLoaderRoute: typeof AppMapsRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/hotels': {
+      id: '/app/hotels'
+      path: '/hotels'
+      fullPath: '/app/hotels'
+      preLoaderRoute: typeof AppHotelsRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/flights': {
+      id: '/app/flights'
+      path: '/flights'
+      fullPath: '/app/flights'
+      preLoaderRoute: typeof AppFlightsRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/finance': {
+      id: '/app/finance'
+      path: '/finance'
+      fullPath: '/app/finance'
+      preLoaderRoute: typeof AppFinanceRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/community': {
+      id: '/app/community'
+      path: '/community'
+      fullPath: '/app/community'
+      preLoaderRoute: typeof AppCommunityRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/backpack': {
+      id: '/app/backpack'
+      path: '/backpack'
+      fullPath: '/app/backpack'
+      preLoaderRoute: typeof AppBackpackRouteImport
+      parentRoute: typeof AppRoute
+    }
   }
 }
 
+interface AppRouteChildren {
+  AppBackpackRoute: typeof AppBackpackRoute
+  AppCommunityRoute: typeof AppCommunityRoute
+  AppFinanceRoute: typeof AppFinanceRoute
+  AppFlightsRoute: typeof AppFlightsRoute
+  AppHotelsRoute: typeof AppHotelsRoute
+  AppMapsRoute: typeof AppMapsRoute
+  AppNewsRoute: typeof AppNewsRoute
+  AppPlanRoute: typeof AppPlanRoute
+  AppSettingsRoute: typeof AppSettingsRoute
+  AppTransportRoute: typeof AppTransportRoute
+  AppTripsRoute: typeof AppTripsRoute
+  AppIndexRoute: typeof AppIndexRoute
+}
+
+const AppRouteChildren: AppRouteChildren = {
+  AppBackpackRoute: AppBackpackRoute,
+  AppCommunityRoute: AppCommunityRoute,
+  AppFinanceRoute: AppFinanceRoute,
+  AppFlightsRoute: AppFlightsRoute,
+  AppHotelsRoute: AppHotelsRoute,
+  AppMapsRoute: AppMapsRoute,
+  AppNewsRoute: AppNewsRoute,
+  AppPlanRoute: AppPlanRoute,
+  AppSettingsRoute: AppSettingsRoute,
+  AppTransportRoute: AppTransportRoute,
+  AppTripsRoute: AppTripsRoute,
+  AppIndexRoute: AppIndexRoute,
+}
+
+const AppRouteWithChildren = AppRoute._addFileChildren(AppRouteChildren)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AppRoute: AppRouteWithChildren,
+  LoginRoute: LoginRoute,
+  SignupRoute: SignupRoute,
+  SitemapDotxmlRoute: SitemapDotxmlRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
