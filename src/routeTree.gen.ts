@@ -16,6 +16,7 @@ import { Route as AppTripsRouteImport } from './routes/app.trips'
 import { Route as AppPlanRouteImport } from './routes/app.plan'
 import { Route as AppMapsRouteImport } from './routes/app.maps'
 import { Route as AppHotelsRouteImport } from './routes/app.hotels'
+import { Route as AppFlightsRouteImport } from './routes/app.flights'
 import { Route as AppFinanceRouteImport } from './routes/app.finance'
 import { Route as AppCommunityRouteImport } from './routes/app.community'
 import { Route as AppBackpackRouteImport } from './routes/app.backpack'
@@ -55,6 +56,11 @@ const AppHotelsRoute = AppHotelsRouteImport.update({
   path: '/hotels',
   getParentRoute: () => AppRoute,
 } as any)
+const AppFlightsRoute = AppFlightsRouteImport.update({
+  id: '/flights',
+  path: '/flights',
+  getParentRoute: () => AppRoute,
+} as any)
 const AppFinanceRoute = AppFinanceRouteImport.update({
   id: '/finance',
   path: '/finance',
@@ -77,6 +83,7 @@ export interface FileRoutesByFullPath {
   '/app/backpack': typeof AppBackpackRoute
   '/app/community': typeof AppCommunityRoute
   '/app/finance': typeof AppFinanceRoute
+  '/app/flights': typeof AppFlightsRoute
   '/app/hotels': typeof AppHotelsRoute
   '/app/maps': typeof AppMapsRoute
   '/app/plan': typeof AppPlanRoute
@@ -88,6 +95,7 @@ export interface FileRoutesByTo {
   '/app/backpack': typeof AppBackpackRoute
   '/app/community': typeof AppCommunityRoute
   '/app/finance': typeof AppFinanceRoute
+  '/app/flights': typeof AppFlightsRoute
   '/app/hotels': typeof AppHotelsRoute
   '/app/maps': typeof AppMapsRoute
   '/app/plan': typeof AppPlanRoute
@@ -101,6 +109,7 @@ export interface FileRoutesById {
   '/app/backpack': typeof AppBackpackRoute
   '/app/community': typeof AppCommunityRoute
   '/app/finance': typeof AppFinanceRoute
+  '/app/flights': typeof AppFlightsRoute
   '/app/hotels': typeof AppHotelsRoute
   '/app/maps': typeof AppMapsRoute
   '/app/plan': typeof AppPlanRoute
@@ -115,6 +124,7 @@ export interface FileRouteTypes {
     | '/app/backpack'
     | '/app/community'
     | '/app/finance'
+    | '/app/flights'
     | '/app/hotels'
     | '/app/maps'
     | '/app/plan'
@@ -126,6 +136,7 @@ export interface FileRouteTypes {
     | '/app/backpack'
     | '/app/community'
     | '/app/finance'
+    | '/app/flights'
     | '/app/hotels'
     | '/app/maps'
     | '/app/plan'
@@ -138,6 +149,7 @@ export interface FileRouteTypes {
     | '/app/backpack'
     | '/app/community'
     | '/app/finance'
+    | '/app/flights'
     | '/app/hotels'
     | '/app/maps'
     | '/app/plan'
@@ -201,6 +213,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AppHotelsRouteImport
       parentRoute: typeof AppRoute
     }
+    '/app/flights': {
+      id: '/app/flights'
+      path: '/flights'
+      fullPath: '/app/flights'
+      preLoaderRoute: typeof AppFlightsRouteImport
+      parentRoute: typeof AppRoute
+    }
     '/app/finance': {
       id: '/app/finance'
       path: '/finance'
@@ -229,6 +248,7 @@ interface AppRouteChildren {
   AppBackpackRoute: typeof AppBackpackRoute
   AppCommunityRoute: typeof AppCommunityRoute
   AppFinanceRoute: typeof AppFinanceRoute
+  AppFlightsRoute: typeof AppFlightsRoute
   AppHotelsRoute: typeof AppHotelsRoute
   AppMapsRoute: typeof AppMapsRoute
   AppPlanRoute: typeof AppPlanRoute
@@ -240,6 +260,7 @@ const AppRouteChildren: AppRouteChildren = {
   AppBackpackRoute: AppBackpackRoute,
   AppCommunityRoute: AppCommunityRoute,
   AppFinanceRoute: AppFinanceRoute,
+  AppFlightsRoute: AppFlightsRoute,
   AppHotelsRoute: AppHotelsRoute,
   AppMapsRoute: AppMapsRoute,
   AppPlanRoute: AppPlanRoute,
