@@ -13,6 +13,7 @@ import { Route as AppRouteImport } from './routes/app'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AppIndexRouteImport } from './routes/app.index'
 import { Route as AppTripsRouteImport } from './routes/app.trips'
+import { Route as AppSettingsRouteImport } from './routes/app.settings'
 import { Route as AppPlanRouteImport } from './routes/app.plan'
 import { Route as AppNewsRouteImport } from './routes/app.news'
 import { Route as AppMapsRouteImport } from './routes/app.maps'
@@ -40,6 +41,11 @@ const AppIndexRoute = AppIndexRouteImport.update({
 const AppTripsRoute = AppTripsRouteImport.update({
   id: '/trips',
   path: '/trips',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppSettingsRoute = AppSettingsRouteImport.update({
+  id: '/settings',
+  path: '/settings',
   getParentRoute: () => AppRoute,
 } as any)
 const AppPlanRoute = AppPlanRouteImport.update({
@@ -94,6 +100,7 @@ export interface FileRoutesByFullPath {
   '/app/maps': typeof AppMapsRoute
   '/app/news': typeof AppNewsRoute
   '/app/plan': typeof AppPlanRoute
+  '/app/settings': typeof AppSettingsRoute
   '/app/trips': typeof AppTripsRoute
   '/app/': typeof AppIndexRoute
 }
@@ -107,6 +114,7 @@ export interface FileRoutesByTo {
   '/app/maps': typeof AppMapsRoute
   '/app/news': typeof AppNewsRoute
   '/app/plan': typeof AppPlanRoute
+  '/app/settings': typeof AppSettingsRoute
   '/app/trips': typeof AppTripsRoute
   '/app': typeof AppIndexRoute
 }
@@ -122,6 +130,7 @@ export interface FileRoutesById {
   '/app/maps': typeof AppMapsRoute
   '/app/news': typeof AppNewsRoute
   '/app/plan': typeof AppPlanRoute
+  '/app/settings': typeof AppSettingsRoute
   '/app/trips': typeof AppTripsRoute
   '/app/': typeof AppIndexRoute
 }
@@ -138,6 +147,7 @@ export interface FileRouteTypes {
     | '/app/maps'
     | '/app/news'
     | '/app/plan'
+    | '/app/settings'
     | '/app/trips'
     | '/app/'
   fileRoutesByTo: FileRoutesByTo
@@ -151,6 +161,7 @@ export interface FileRouteTypes {
     | '/app/maps'
     | '/app/news'
     | '/app/plan'
+    | '/app/settings'
     | '/app/trips'
     | '/app'
   id:
@@ -165,6 +176,7 @@ export interface FileRouteTypes {
     | '/app/maps'
     | '/app/news'
     | '/app/plan'
+    | '/app/settings'
     | '/app/trips'
     | '/app/'
   fileRoutesById: FileRoutesById
@@ -202,6 +214,13 @@ declare module '@tanstack/react-router' {
       path: '/trips'
       fullPath: '/app/trips'
       preLoaderRoute: typeof AppTripsRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/app/settings': {
+      id: '/app/settings'
+      path: '/settings'
+      fullPath: '/app/settings'
+      preLoaderRoute: typeof AppSettingsRouteImport
       parentRoute: typeof AppRoute
     }
     '/app/plan': {
@@ -272,6 +291,7 @@ interface AppRouteChildren {
   AppMapsRoute: typeof AppMapsRoute
   AppNewsRoute: typeof AppNewsRoute
   AppPlanRoute: typeof AppPlanRoute
+  AppSettingsRoute: typeof AppSettingsRoute
   AppTripsRoute: typeof AppTripsRoute
   AppIndexRoute: typeof AppIndexRoute
 }
@@ -285,6 +305,7 @@ const AppRouteChildren: AppRouteChildren = {
   AppMapsRoute: AppMapsRoute,
   AppNewsRoute: AppNewsRoute,
   AppPlanRoute: AppPlanRoute,
+  AppSettingsRoute: AppSettingsRoute,
   AppTripsRoute: AppTripsRoute,
   AppIndexRoute: AppIndexRoute,
 }
