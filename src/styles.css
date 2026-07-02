@@ -2,6 +2,9 @@
 @source "../src";
 @import "tw-animate-css";
 
+/* Safelist dynamic tone classes used by ui-kit primitives */
+@source inline("{text,bg,ring,border}-{emerald,sky,warm,coral,primary}{,/5,/10,/15,/20,/25}");
+
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {

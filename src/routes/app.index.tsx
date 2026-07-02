@@ -1,7 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { GlassCard } from "@/components/glass-card";
+import { PageHeader, SectionHeader, StatusBadge, TButton } from "@/components/ui-kit";
 import { destinations, trips, insights, aiRecommendations, notifications } from "@/lib/mock-data";
-import { Sparkles, Compass, Map, Wallet, Backpack, Users, Newspaper, PhoneCall, ArrowRight, Cloud, Star, TrendingUp } from "lucide-react";
+import { Sparkles, Map, Wallet, Backpack, Users, PhoneCall, ArrowRight, Cloud, Star, TrendingUp } from "lucide-react";
 
 export const Route = createFileRoute("/app/")({
   head: () => ({ meta: [{ title: "Home — Trailvia" }] }),
@@ -22,20 +23,17 @@ function HomeDashboard() {
   return (
     <div className="space-y-6 max-w-7xl mx-auto">
       {/* Greeting */}
-      <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
-        <div>
-          <div className="text-xs uppercase tracking-widest text-primary">Good morning</div>
-          <h1 className="text-4xl md:text-5xl font-black tracking-tight">Hey Snehith 👋</h1>
-          <div className="mt-2 text-sm text-muted-foreground flex flex-wrap gap-3">
-            <span className="inline-flex items-center gap-1"><Cloud className="size-4" /> Hyderabad · 32° partly cloudy</span>
-            <span>·</span>
-            <span>12 days until <b className="text-foreground">Cherry Blossom Japan</b></span>
-          </div>
-        </div>
+      <div className="flex flex-wrap items-end justify-between gap-4">
+        <PageHeader
+          eyebrow="Good morning"
+          title="Hey Snehith 👋"
+          subtitle={`Hyderabad · 32° partly cloudy   ·   12 days until Cherry Blossom Japan`}
+          icon={Cloud}
+        />
         <GlassCard className="flex items-center gap-4 py-3 px-5">
           <div className="text-3xl font-black text-gradient-emerald">{insights.travelScore}</div>
           <div>
-            <div className="text-xs uppercase tracking-widest text-muted-foreground">Travel score</div>
+            <div className="text-[10px] uppercase tracking-widest text-muted-foreground">Travel score</div>
             <div className="text-xs flex items-center gap-1 text-primary"><TrendingUp className="size-3" /> +18 this month</div>
           </div>
         </GlassCard>
