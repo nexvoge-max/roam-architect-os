@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, useRouterState } from "@tanstack/react-router";
-import { Home, Sparkles, Map, Route as RouteIcon, Users, Wallet, Backpack, Newspaper, Hotel, Plane, Bus, Settings, Bell, User } from "lucide-react";
+import { Home, Sparkles, Map, Route as RouteIcon, Users, Wallet, Backpack, Newspaper, Hotel, Plane, Bus, Settings, Bell, Compass } from "lucide-react";
 import { CommandPalette, CommandTrigger } from "./command-palette";
 import { cn } from "@/lib/utils";
 
@@ -8,10 +8,11 @@ const primary = [
   { to: "/app", label: "Home", icon: Home, exact: true },
   { to: "/app/plan", label: "Plan", icon: Sparkles },
   { to: "/app/maps", label: "Maps", icon: Map },
-  { to: "/app/trips", label: "Trips", icon: RouteIcon },
+  { to: "/app/guide", label: "Guide", icon: Compass },
   { to: "/app/community", label: "Community", icon: Users },
 ];
 const secondary = [
+  { to: "/app/trips", label: "Trips", icon: RouteIcon },
   { to: "/app/finance", label: "Finance", icon: Wallet },
   { to: "/app/backpack", label: "Backpack", icon: Backpack },
   { to: "/app/news", label: "News", icon: Newspaper },
