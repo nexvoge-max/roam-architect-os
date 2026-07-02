@@ -1,7 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { GlassCard } from "@/components/glass-card";
+import { PageHeader, SectionHeader, StatusBadge, TButton } from "@/components/ui-kit";
 import { destinations, trips, insights, aiRecommendations, notifications } from "@/lib/mock-data";
-import { Sparkles, Compass, Map, Wallet, Backpack, Users, Newspaper, PhoneCall, ArrowRight, Cloud, Star, TrendingUp } from "lucide-react";
+import { Sparkles, Map, Wallet, Backpack, Users, PhoneCall, ArrowRight, Cloud, Star, TrendingUp } from "lucide-react";
 
 export const Route = createFileRoute("/app/")({
   head: () => ({ meta: [{ title: "Home — Trailvia" }] }),
@@ -22,20 +23,17 @@ function HomeDashboard() {
   return (
     <div className="space-y-6 max-w-7xl mx-auto">
       {/* Greeting */}
-      <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
-        <div>
-          <div className="text-xs uppercase tracking-widest text-primary">Good morning</div>
-          <h1 className="text-4xl md:text-5xl font-black tracking-tight">Hey Snehith 👋</h1>
-          <div className="mt-2 text-sm text-muted-foreground flex flex-wrap gap-3">
-            <span className="inline-flex items-center gap-1"><Cloud className="size-4" /> Hyderabad · 32° partly cloudy</span>
-            <span>·</span>
-            <span>12 days until <b className="text-foreground">Cherry Blossom Japan</b></span>
-          </div>
-        </div>
+      <div className="flex flex-wrap items-end justify-between gap-4">
+        <PageHeader
+          eyebrow="Good morning"
+          title="Hey Snehith 👋"
+          subtitle={`Hyderabad · 32° partly cloudy   ·   12 days until Cherry Blossom Japan`}
+          icon={Cloud}
+        />
         <GlassCard className="flex items-center gap-4 py-3 px-5">
           <div className="text-3xl font-black text-gradient-emerald">{insights.travelScore}</div>
           <div>
-            <div className="text-xs uppercase tracking-widest text-muted-foreground">Travel score</div>
+            <div className="text-[10px] uppercase tracking-widest text-muted-foreground">Travel score</div>
             <div className="text-xs flex items-center gap-1 text-primary"><TrendingUp className="size-3" /> +18 this month</div>
           </div>
         </GlassCard>
@@ -77,22 +75,23 @@ function HomeDashboard() {
               </div>
             </div>
             <div className="mt-6 flex flex-wrap gap-2">
-              <Link to="/app/plan" className="rounded-2xl bg-primary text-primary-foreground px-5 py-2.5 text-sm font-semibold hover:opacity-90 transition inline-flex items-center gap-1">Continue <ArrowRight className="size-4" /></Link>
-              <Link to="/app/trips" className="rounded-2xl glass px-5 py-2.5 text-sm font-semibold hover:bg-white/5 transition">View all trips</Link>
+              <Link to="/app/plan"><TButton variant="primary">Continue <ArrowRight className="size-4" /></TButton></Link>
+              <Link to="/app/trips"><TButton variant="secondary">View all trips</TButton></Link>
             </div>
           </div>
         </div>
       </GlassCard>
 
       {/* AI recommendations */}
-      <section>
-        <div className="flex items-end justify-between mb-3">
-          <h2 className="text-2xl font-black tracking-tight">For you, curated by AI</h2>
-          <div className="text-xs text-muted-foreground">Updated 2 min ago</div>
-        </div>
+      <section className="space-y-3">
+        <SectionHeader
+          eyebrow="AI Copilot"
+          title="For you, curated by AI"
+          actions={<span className="text-xs text-muted-foreground">Updated 2 min ago</span>}
+        />
         <div className="flex gap-3 overflow-x-auto pb-2 -mx-4 px-4">
           {aiRecommendations.map((r) => (
-            <div key={r.title} className="shrink-0 w-52 glass rounded-2xl p-5 hover-lift cursor-pointer">
+            <div key={r.title} className="shrink-0 w-52 glass rounded-3xl p-5 hover-lift cursor-pointer">
               <div className="text-3xl">{r.icon}</div>
               <div className="mt-3 font-bold">{r.title}</div>
               <div className="text-xs text-muted-foreground mt-0.5">{r.subtitle}</div>
@@ -119,15 +118,15 @@ function HomeDashboard() {
       </section>
 
       {/* Upcoming trips + notifications */}
-      <section className="grid lg:grid-cols-[2fr_1fr] gap-4">
-        <div>
-          <h2 className="text-2xl font-black tracking-tight mb-3">Upcoming trips</h2>
+      <section className="grid lg:grid-cols-[2fr_1fr] gap-5">
+        <div className="space-y-3">
+          <SectionHeader title="Upcoming trips" actions={<Link to="/app/trips" className="text-xs text-muted-foreground hover:text-foreground inline-flex items-center gap-1">All <ArrowRight className="size-3" /></Link>} />
           <div className="grid sm:grid-cols-2 gap-3">
             {trips.filter(t => t.status !== "completed").map((t) => (
               <GlassCard key={t.id} variant="strong" className="p-0 overflow-hidden hover-lift">
                 <div className="relative h-32">
                   <img src={t.cover} alt={t.title} className="size-full object-cover" />
-                  <div className="absolute top-2 right-2 glass rounded-full px-2 py-0.5 text-[10px]">{t.status}</div>
+                  <StatusBadge status={t.status} className="absolute top-2 right-2" />
                 </div>
                 <div className="p-4">
                   <div className="font-bold">{t.title}</div>
@@ -141,8 +140,8 @@ function HomeDashboard() {
             ))}
           </div>
         </div>
-        <div>
-          <h2 className="text-2xl font-black tracking-tight mb-3">Notifications</h2>
+        <div className="space-y-3">
+          <SectionHeader title="Notifications" />
           <GlassCard className="p-2 space-y-1">
             {notifications.map((n) => (
               <div key={n.id} className="flex items-center gap-3 rounded-2xl px-3 py-2.5 hover:bg-white/5 transition cursor-pointer">
@@ -158,12 +157,12 @@ function HomeDashboard() {
       </section>
 
       {/* Quick actions */}
-      <section>
-        <h2 className="text-2xl font-black tracking-tight mb-3">Quick actions</h2>
+      <section className="space-y-3">
+        <SectionHeader title="Quick actions" />
         <div className="grid grid-cols-3 md:grid-cols-6 gap-3">
           {quickActions.map((q) => (
-            <Link key={q.label} to={q.to} className="glass rounded-2xl p-4 text-center hover-lift">
-              <div className={`size-10 mx-auto rounded-2xl bg-gradient-to-br ${q.tone} grid place-items-center`}>
+            <Link key={q.label} to={q.to} className="glass rounded-3xl p-4 text-center hover-lift">
+              <div className={`size-10 mx-auto rounded-2xl bg-linear-to-br ${q.tone} grid place-items-center`}>
                 <q.icon className="size-5 text-primary-foreground" />
               </div>
               <div className="mt-2 text-xs font-semibold">{q.label}</div>
@@ -173,16 +172,16 @@ function HomeDashboard() {
       </section>
 
       {/* Trending destinations */}
-      <section>
-        <div className="flex items-end justify-between mb-3">
-          <h2 className="text-2xl font-black tracking-tight">Trending destinations</h2>
-          <Link to="/app/plan" className="text-xs text-muted-foreground hover:text-foreground inline-flex items-center gap-1">See all <ArrowRight className="size-3" /></Link>
-        </div>
+      <section className="space-y-3">
+        <SectionHeader
+          title="Trending destinations"
+          actions={<Link to="/app/plan" className="text-xs text-muted-foreground hover:text-foreground inline-flex items-center gap-1">See all <ArrowRight className="size-3" /></Link>}
+        />
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-3">
           {destinations.slice(0, 4).map((d) => (
             <div key={d.id} className="relative rounded-3xl overflow-hidden group hover-lift cursor-pointer">
               <img src={d.image} alt={d.name} className="w-full h-52 object-cover group-hover:scale-110 transition duration-500" />
-              <div className="absolute inset-0 bg-gradient-to-t from-background via-background/30 to-transparent" />
+              <div className="absolute inset-0 bg-linear-to-t from-background via-background/30 to-transparent" />
               <div className="absolute top-3 right-3 glass rounded-full px-2 py-1 text-xs flex items-center gap-1"><Star className="size-3 fill-warm text-warm" /> {d.rating}</div>
               <div className="absolute bottom-3 left-3 right-3">
                 <div className="font-bold">{d.name}</div>
