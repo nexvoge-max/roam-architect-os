@@ -85,7 +85,7 @@ function Landing() {
           </div>
           <h1 className="mt-6 text-5xl md:text-7xl lg:text-[88px] font-black tracking-tight leading-[0.95] animate-fade-up">
             More Than a Trip.<br />
-            <span className="text-gradient-emerald">It's Your Story.</span>
+            <span className="text-gradient-emerald">It's a Trail.</span>
           </h1>
           <p className="mt-6 max-w-2xl mx-auto text-lg text-muted-foreground animate-fade-up">
             Trailvia unifies discovery, planning, booking, finance, packing, navigation, community, and memories into one intelligent, AI-first companion.
