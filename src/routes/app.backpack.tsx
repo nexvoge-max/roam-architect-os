@@ -73,7 +73,7 @@ function Backpack() {
                     <div className="text-[11px] text-muted-foreground">{c.packed}/{c.total} packed</div>
                   </div>
                 </div>
-                <div className="h-1.5 rounded-full bg-white/5 overflow-hidden mt-3">
+                <div className="h-1.5 rounded-full bg-primary/5 overflow-hidden mt-3">
                   <div className="h-full bg-gradient-to-r from-emerald to-sky" style={{ width: `${(c.packed/c.total)*100}%` }} />
                 </div>
               </GlassCard>

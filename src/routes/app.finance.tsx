@@ -63,7 +63,7 @@ function Finance() {
                 <span>{c.name}</span>
                 <span className="font-semibold">${c.value.toLocaleString()}</span>
               </div>
-              <div className="h-2 rounded-full bg-white/5 overflow-hidden">
+              <div className="h-2 rounded-full bg-primary/5 overflow-hidden">
                 <div className="h-full rounded-full" style={{ width: `${(c.value/total)*100}%`, background: c.color }} />
               </div>
             </div>
@@ -112,7 +112,7 @@ function Finance() {
         <div className="font-bold mb-3">Expense timeline</div>
         <div className="space-y-2">
           {timeline.map((t, i) => (
-            <div key={i} className="flex items-center gap-3 p-2 rounded-2xl hover:bg-white/5 transition">
+            <div key={i} className="flex items-center gap-3 p-2 rounded-2xl hover:bg-primary/5 transition">
               <div className="size-9 rounded-xl glass grid place-items-center"><DollarSign className="size-4 text-primary" /></div>
               <div className="flex-1 min-w-0">
                 <div className="text-sm font-semibold truncate">{t.place}</div>

@@ -54,7 +54,7 @@ function GuideDashboard() {
           <div className="text-sm text-muted-foreground">Kyoto · 18° · Cherry Blossom Japan — Day 4 of 14</div>
         </div>
         <div className="flex items-center gap-2">
-          <button className="glass rounded-2xl px-4 py-2.5 text-sm font-semibold inline-flex items-center gap-2 hover:bg-white/5">
+          <button className="glass rounded-2xl px-4 py-2.5 text-sm font-semibold inline-flex items-center gap-2 hover:bg-primary/5">
             <Radio className="size-4 text-emerald" /> Go live
           </button>
           <button className="rounded-2xl bg-primary text-primary-foreground px-4 py-2.5 text-sm font-semibold inline-flex items-center gap-2 hover:opacity-90">
@@ -105,7 +105,7 @@ function GuideDashboard() {
               <div className="text-sm font-semibold inline-flex items-center gap-2"><Clock className="size-4 text-primary" /> Today's itinerary</div>
               <button className="text-xs text-muted-foreground inline-flex items-center gap-1 hover:text-foreground">Full plan <ChevronRight className="size-3" /></button>
             </div>
-            <ol className="relative space-y-3 pl-4 before:content-[''] before:absolute before:left-1.5 before:top-2 before:bottom-2 before:w-px before:bg-white/10">
+            <ol className="relative space-y-3 pl-4 before:content-[''] before:absolute before:left-1.5 before:top-2 before:bottom-2 before:w-px before:bg-primary/10">
               {timeline.map((t) => (
                 <li key={t.time} className="relative">
                   <span className={`absolute -left-[11px] top-1.5 size-2.5 rounded-full bg-${t.tone} ring-4 ring-background`} />
@@ -141,8 +141,8 @@ function GuideDashboard() {
                       <span className="size-1.5 rounded-full bg-emerald" /> Checked in · 2m ago
                     </div>
                   </div>
-                  <button className="glass rounded-xl p-1.5 hover:bg-white/5"><MessageCircle className="size-3.5" /></button>
-                  <button className="glass rounded-xl p-1.5 hover:bg-white/5"><Phone className="size-3.5" /></button>
+                  <button className="glass rounded-xl p-1.5 hover:bg-primary/5"><MessageCircle className="size-3.5" /></button>
+                  <button className="glass rounded-xl p-1.5 hover:bg-primary/5"><Phone className="size-3.5" /></button>
                 </div>
               ))}
             </div>

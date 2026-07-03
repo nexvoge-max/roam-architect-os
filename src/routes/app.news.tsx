@@ -24,7 +24,7 @@ function News() {
         <h1 className="text-4xl md:text-5xl font-black tracking-tight">Travel news</h1>
       </div>
       <div className="flex flex-wrap gap-2">
-        {categories.map((c,i) => <button key={c} className={`rounded-full px-4 py-1.5 text-xs font-semibold ${i===0 ? "bg-primary text-primary-foreground" : "glass hover:bg-white/5"}`}>{c}</button>)}
+        {categories.map((c,i) => <button key={c} className={`rounded-full px-4 py-1.5 text-xs font-semibold ${i===0 ? "bg-primary text-primary-foreground" : "glass hover:bg-primary/5"}`}>{c}</button>)}
       </div>
       <div className="space-y-3">
         {alerts.map((a) => (
@@ -38,7 +38,7 @@ function News() {
                 <div className="text-sm text-muted-foreground mt-0.5">{a.desc}</div>
                 <div className="text-[11px] text-muted-foreground mt-2">{a.time} ago</div>
               </div>
-              <button className="text-xs rounded-full glass px-3 py-1.5 hover:bg-white/5 shrink-0">Details</button>
+              <button className="text-xs rounded-full glass px-3 py-1.5 hover:bg-primary/5 shrink-0">Details</button>
             </div>
           </GlassCard>
         ))}

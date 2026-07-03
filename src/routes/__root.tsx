@@ -53,7 +53,7 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
           >
             Try again
           </button>
-          <a href="/" className="rounded-2xl glass px-5 py-2.5 text-sm font-semibold hover:bg-white/5 transition">Go home</a>
+          <a href="/" className="rounded-2xl glass px-5 py-2.5 text-sm font-semibold hover:bg-primary/5 transition">Go home</a>
         </div>
       </div>
     </div>
@@ -68,7 +68,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { title: "Trailvia — Your AI Travel Operating System" },
       { name: "description", content: "Trailvia unifies discovery, planning, booking, finance, packing, navigation, community, and memories into one intelligent, AI-first travel companion." },
       { name: "author", content: "Trailvia" },
-      { name: "theme-color", content: "#0b1226" },
+      { name: "theme-color", content: "#e6f4fb" },
       { property: "og:title", content: "Trailvia — Your AI Travel Operating System" },
       { property: "og:description", content: "Trailvia unifies discovery, planning, booking, finance, packing, navigation, community, and memories into one intelligent, AI-first travel companion." },
       { property: "og:type", content: "website" },

@@ -94,7 +94,7 @@ function Landing() {
             <Link to="/app/plan" className="inline-flex items-center gap-2 rounded-2xl bg-primary text-primary-foreground px-6 py-3.5 font-semibold hover:opacity-90 transition glow-emerald">
               Start Planning <ArrowRight className="size-4" />
             </Link>
-            <Link to="/app" className="inline-flex items-center gap-2 rounded-2xl glass-strong px-6 py-3.5 font-semibold hover:bg-white/5 transition">
+            <Link to="/app" className="inline-flex items-center gap-2 rounded-2xl glass-strong px-6 py-3.5 font-semibold hover:bg-primary/5 transition">
               Explore demo
             </Link>
             <button className="inline-flex items-center gap-2 rounded-2xl px-4 py-3.5 font-medium text-muted-foreground hover:text-foreground transition">
@@ -219,7 +219,7 @@ function Landing() {
               <ul className="mt-6 space-y-2.5 text-sm">
                 {p.perks.map(pk => <li key={pk} className="flex gap-2"><span className="text-primary">✓</span> {pk}</li>)}
               </ul>
-              <button className={`mt-8 w-full rounded-2xl py-3 font-semibold transition ${p.featured ? "bg-primary text-primary-foreground hover:opacity-90" : "glass hover:bg-white/5"}`}>{p.cta}</button>
+              <button className={`mt-8 w-full rounded-2xl py-3 font-semibold transition ${p.featured ? "bg-primary text-primary-foreground hover:opacity-90" : "glass hover:bg-primary/5"}`}>{p.cta}</button>
             </GlassCard>
           ))}
         </div>

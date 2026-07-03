@@ -71,7 +71,7 @@ function Maps() {
         {/* Category chips */}
         <div className="absolute top-20 left-4 right-4 flex gap-2 overflow-x-auto pb-1">
           {categories.map((c) => (
-            <button key={c.label} className="glass rounded-full px-3 py-1.5 text-xs whitespace-nowrap hover:bg-white/5">
+            <button key={c.label} className="glass rounded-full px-3 py-1.5 text-xs whitespace-nowrap hover:bg-primary/5">
               <span className="mr-1.5">{c.icon}</span>{c.label}
             </button>
           ))}
@@ -79,10 +79,10 @@ function Maps() {
 
         {/* Floating controls */}
         <div className="absolute bottom-4 right-4 flex flex-col gap-2">
-          <button className="glass-strong rounded-2xl p-3 hover:bg-white/5"><Navigation className="size-4 text-primary" /></button>
-          <button className="glass-strong rounded-2xl p-3 hover:bg-white/5"><Compass className="size-4" /></button>
-          <button className="glass-strong rounded-2xl p-3 hover:bg-white/5"><Download className="size-4" /></button>
-          <button className="glass-strong rounded-2xl p-3 hover:bg-white/5"><Cloud className="size-4" /></button>
+          <button className="glass-strong rounded-2xl p-3 hover:bg-primary/5"><Navigation className="size-4 text-primary" /></button>
+          <button className="glass-strong rounded-2xl p-3 hover:bg-primary/5"><Compass className="size-4" /></button>
+          <button className="glass-strong rounded-2xl p-3 hover:bg-primary/5"><Download className="size-4" /></button>
+          <button className="glass-strong rounded-2xl p-3 hover:bg-primary/5"><Cloud className="size-4" /></button>
         </div>
 
         {/* AI assist */}
