@@ -70,7 +70,7 @@ function HomeDashboard() {
             </div>
             <div className="mt-4">
               <div className="flex justify-between text-xs mb-1.5"><span className="text-muted-foreground">Plan progress</span><span className="font-semibold">{active.progress}%</span></div>
-              <div className="h-2 rounded-full bg-white/5 overflow-hidden">
+              <div className="h-2 rounded-full bg-primary/5 overflow-hidden">
                 <div className="h-full bg-gradient-to-r from-emerald to-sky" style={{ width: `${active.progress}%` }} />
               </div>
             </div>
@@ -144,7 +144,7 @@ function HomeDashboard() {
           <SectionHeader title="Notifications" />
           <GlassCard className="p-2 space-y-1">
             {notifications.map((n) => (
-              <div key={n.id} className="flex items-center gap-3 rounded-2xl px-3 py-2.5 hover:bg-white/5 transition cursor-pointer">
+              <div key={n.id} className="flex items-center gap-3 rounded-2xl px-3 py-2.5 hover:bg-primary/5 transition cursor-pointer">
                 <div className="text-2xl">{n.icon}</div>
                 <div className="flex-1 min-w-0">
                   <div className="text-sm truncate">{n.title}</div>

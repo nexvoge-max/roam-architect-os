@@ -19,7 +19,7 @@ function Hotels() {
       </div>
       <div className="flex flex-wrap gap-2">
         {filters.map((f, i) => (
-          <button key={f} className={`rounded-full px-4 py-1.5 text-xs font-semibold transition ${i===0 ? "bg-primary text-primary-foreground" : "glass hover:bg-white/5"}`}>{f}</button>
+          <button key={f} className={`rounded-full px-4 py-1.5 text-xs font-semibold transition ${i===0 ? "bg-primary text-primary-foreground" : "glass hover:bg-primary/5"}`}>{f}</button>
         ))}
       </div>
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">

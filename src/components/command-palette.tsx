@@ -88,7 +88,7 @@ export function CommandTrigger({ onClick }: { onClick: () => void }) {
   return (
     <button
       onClick={onClick}
-      className="glass hidden md:flex items-center gap-3 rounded-2xl px-4 py-2.5 text-sm text-muted-foreground w-[380px] hover:bg-white/5 transition"
+      className="glass hidden md:flex items-center gap-3 rounded-2xl px-4 py-2.5 text-sm text-muted-foreground w-[380px] hover:bg-primary/5 transition"
     >
       <SearchIcon className="size-4" />
       <span>Search anything — places, trips, guides...</span>

@@ -23,7 +23,7 @@ function Trips() {
       </div>
       <div className="flex flex-wrap gap-2">
         {tabs.map(t => (
-          <button key={t} onClick={() => setTab(t)} className={`rounded-full px-4 py-1.5 text-xs font-semibold transition ${tab === t ? "bg-primary text-primary-foreground" : "glass hover:bg-white/5"}`}>
+          <button key={t} onClick={() => setTab(t)} className={`rounded-full px-4 py-1.5 text-xs font-semibold transition ${tab === t ? "bg-primary text-primary-foreground" : "glass hover:bg-primary/5"}`}>
             {t}
           </button>
         ))}
@@ -48,13 +48,13 @@ function Trips() {
               </div>
               <div>
                 <div className="flex justify-between text-xs mb-1"><span className="text-muted-foreground">${t.spent.toLocaleString()} of ${t.budget.toLocaleString()}</span><span className="font-semibold">{Math.round((t.spent/t.budget)*100)}%</span></div>
-                <div className="h-1.5 rounded-full bg-white/5 overflow-hidden">
+                <div className="h-1.5 rounded-full bg-primary/5 overflow-hidden">
                   <div className="h-full bg-gradient-to-r from-emerald to-sky" style={{ width: `${(t.spent/t.budget)*100}%` }} />
                 </div>
               </div>
               <div className="flex gap-2">
                 <button className="flex-1 rounded-2xl bg-primary text-primary-foreground py-2 text-sm font-semibold hover:opacity-90">Open</button>
-                <button className="rounded-2xl glass py-2 px-4 text-sm font-semibold hover:bg-white/5">Share</button>
+                <button className="rounded-2xl glass py-2 px-4 text-sm font-semibold hover:bg-primary/5">Share</button>
               </div>
             </div>
           </GlassCard>

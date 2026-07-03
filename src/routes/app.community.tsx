@@ -26,7 +26,7 @@ function Community() {
       <div className="flex gap-3 overflow-x-auto -mx-4 px-4">
         {stories.map((s, i) => (
           <button key={i} className="flex flex-col items-center gap-1 shrink-0">
-            <div className={`size-16 rounded-full p-[3px] ${s.ring ? "bg-gradient-to-tr from-emerald via-sky to-coral" : "bg-white/10"}`}>
+            <div className={`size-16 rounded-full p-[3px] ${s.ring ? "bg-gradient-to-tr from-emerald via-sky to-coral" : "bg-primary/10"}`}>
               <div className="size-full rounded-full bg-background grid place-items-center overflow-hidden">
                 <div className="size-[54px] rounded-full bg-gradient-to-br from-warm to-coral grid place-items-center font-bold">{s.name[0]}</div>
               </div>
@@ -39,7 +39,7 @@ function Community() {
       {/* Tabs */}
       <div className="flex gap-2 overflow-x-auto">
         {tabs.map((t, i) => (
-          <button key={t} className={`rounded-full px-4 py-1.5 text-xs font-semibold shrink-0 transition ${i===1 ? "bg-primary text-primary-foreground" : "glass hover:bg-white/5"}`}>{t}</button>
+          <button key={t} className={`rounded-full px-4 py-1.5 text-xs font-semibold shrink-0 transition ${i===1 ? "bg-primary text-primary-foreground" : "glass hover:bg-primary/5"}`}>{t}</button>
         ))}
       </div>
 

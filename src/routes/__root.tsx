@@ -53,7 +53,7 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
           >
             Try again
           </button>
-          <a href="/" className="rounded-2xl glass px-5 py-2.5 text-sm font-semibold hover:bg-white/5 transition">Go home</a>
+          <a href="/" className="rounded-2xl glass px-5 py-2.5 text-sm font-semibold hover:bg-primary/5 transition">Go home</a>
         </div>
       </div>
     </div>

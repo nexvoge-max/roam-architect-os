@@ -33,11 +33,11 @@ function Login() {
           <button className="w-full rounded-2xl bg-primary text-primary-foreground py-3 font-semibold hover:opacity-90 transition">Sign in</button>
         </form>
         <div className="my-6 flex items-center gap-3 text-xs text-muted-foreground">
-          <div className="flex-1 h-px bg-white/10" /> or continue with <div className="flex-1 h-px bg-white/10" />
+          <div className="flex-1 h-px bg-primary/10" /> or continue with <div className="flex-1 h-px bg-primary/10" />
         </div>
         <div className="grid grid-cols-3 gap-2">
           {[{ label: "Apple", icon: Apple }, { label: "Google", icon: null }, { label: "GitHub", icon: Github }].map((p) => (
-            <button key={p.label} className="glass rounded-2xl py-2.5 text-xs font-semibold hover:bg-white/5 transition inline-flex items-center justify-center gap-1.5">
+            <button key={p.label} className="glass rounded-2xl py-2.5 text-xs font-semibold hover:bg-primary/5 transition inline-flex items-center justify-center gap-1.5">
               {p.icon ? <p.icon className="size-4" /> : <span className="font-black">G</span>} {p.label}
             </button>
           ))}

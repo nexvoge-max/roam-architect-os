@@ -30,7 +30,7 @@ function Settings() {
             <div className="font-bold mb-2">{g.title}</div>
             <div className="space-y-1">
               {g.items.map(i => (
-                <button key={i} className="w-full flex items-center justify-between rounded-2xl px-3 py-2.5 text-sm hover:bg-white/5 transition">
+                <button key={i} className="w-full flex items-center justify-between rounded-2xl px-3 py-2.5 text-sm hover:bg-primary/5 transition">
                   <span>{i}</span>
                   <ChevronRight className="size-4 text-muted-foreground" />
                 </button>

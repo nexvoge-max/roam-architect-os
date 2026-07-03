@@ -65,7 +65,7 @@ function Plan() {
         <GlassCard variant="strong">
           <div className="flex items-center justify-between mb-4">
             <div className="font-bold flex items-center gap-2"><RouteIcon className="size-4 text-primary" /> Route</div>
-            <button className="text-xs glass rounded-full px-3 py-1 hover:bg-white/5 inline-flex items-center gap-1"><Plus className="size-3" /> Add stop</button>
+            <button className="text-xs glass rounded-full px-3 py-1 hover:bg-primary/5 inline-flex items-center gap-1"><Plus className="size-3" /> Add stop</button>
           </div>
           <div className="space-y-2">
             {stops.map((s, i) => (
@@ -93,7 +93,7 @@ function Plan() {
           <div className="font-bold mb-3">Travel style</div>
           <div className="flex flex-wrap gap-2">
             {styles.map((s) => (
-              <button key={s} onClick={() => setStyle(s)} className={`rounded-full px-4 py-1.5 text-xs font-semibold transition ${style === s ? "bg-primary text-primary-foreground" : "glass hover:bg-white/5"}`}>
+              <button key={s} onClick={() => setStyle(s)} className={`rounded-full px-4 py-1.5 text-xs font-semibold transition ${style === s ? "bg-primary text-primary-foreground" : "glass hover:bg-primary/5"}`}>
                 {s}
               </button>
             ))}
@@ -106,7 +106,7 @@ function Plan() {
             <div className="font-bold text-lg">Day 3 · Kyoto</div>
             <div className="flex gap-1">
               {[1,2,3,4,5,6,7].map(d => (
-                <button key={d} className={`size-8 rounded-xl text-xs font-semibold transition ${d===3 ? "bg-primary text-primary-foreground" : "glass hover:bg-white/5"}`}>{d}</button>
+                <button key={d} className={`size-8 rounded-xl text-xs font-semibold transition ${d===3 ? "bg-primary text-primary-foreground" : "glass hover:bg-primary/5"}`}>{d}</button>
               ))}
             </div>
           </div>
@@ -202,7 +202,7 @@ function Plan() {
         <div className="p-3 border-t border-white/5">
           <div className="flex flex-wrap gap-1.5 mb-2">
             {["Skip museums", "Add beach day", "Reduce budget", "Move to Day 5", "Local food only"].map(s => (
-              <button key={s} className="text-[11px] glass rounded-full px-2.5 py-1 hover:bg-white/5">{s}</button>
+              <button key={s} className="text-[11px] glass rounded-full px-2.5 py-1 hover:bg-primary/5">{s}</button>
             ))}
           </div>
           <div className="glass rounded-2xl flex items-center gap-2 pl-4 pr-2 py-2">

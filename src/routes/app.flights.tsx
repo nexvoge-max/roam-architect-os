@@ -41,7 +41,7 @@ function Flights() {
                 </div>
                 <div className="text-center text-[10px] text-muted-foreground">
                   <div>{f.duration}</div>
-                  <div className="h-px bg-white/10 my-1" />
+                  <div className="h-px bg-primary/10 my-1" />
                   <div>{f.carbon} CO₂</div>
                 </div>
                 <div className="text-center">

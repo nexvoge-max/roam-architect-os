@@ -14,7 +14,7 @@ const toneClasses: Record<StatusTone, string> = {
   sky: "text-sky bg-sky/10 ring-sky/20",
   warm: "text-warm bg-warm/10 ring-warm/20",
   coral: "text-coral bg-coral/10 ring-coral/20",
-  muted: "text-muted-foreground bg-white/5 ring-white/10",
+  muted: "text-muted-foreground bg-primary/5 ring-primary/10",
   primary: "text-primary bg-primary/10 ring-primary/20",
 };
 
@@ -177,8 +177,8 @@ const btnBase =
   "inline-flex items-center justify-center gap-2 rounded-2xl px-4 py-2.5 text-sm font-semibold transition disabled:opacity-50 disabled:pointer-events-none";
 const btnVariants: Record<BtnVariant, string> = {
   primary: "bg-primary text-primary-foreground hover:opacity-90",
-  secondary: "glass hover:bg-white/5",
-  ghost: "text-muted-foreground hover:text-foreground hover:bg-white/5",
+  secondary: "glass hover:bg-primary/5",
+  ghost: "text-muted-foreground hover:text-foreground hover:bg-primary/5",
   danger: "bg-coral/15 text-coral hover:bg-coral/25",
   success: "bg-emerald/15 text-emerald hover:bg-emerald/25",
 };
@@ -220,7 +220,7 @@ export function EmptyState({
 /* ---------------- Skeleton shimmer ---------------- */
 export function Shimmer({ className }: { className?: string }) {
   return (
-    <div className={cn("relative overflow-hidden rounded-2xl bg-white/5", className)}>
+    <div className={cn("relative overflow-hidden rounded-2xl bg-primary/5", className)}>
       <div className="absolute inset-0 animate-shimmer" />
     </div>
   );

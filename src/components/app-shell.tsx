@@ -75,11 +75,11 @@ export function AppShell({ children }: { children: React.ReactNode }) {
               <CommandTrigger onClick={() => setCmdOpen(true)} />
               <button onClick={() => setCmdOpen(true)} className="md:hidden glass rounded-2xl p-2.5"><Sparkles className="size-4" /></button>
             </div>
-            <button className="relative glass rounded-2xl p-2.5 hover:bg-white/5 transition">
+            <button className="relative glass rounded-2xl p-2.5 hover:bg-primary/5 transition">
               <Bell className="size-4" />
               <span className="absolute top-1 right-1 size-2 rounded-full bg-coral" />
             </button>
-            <button className="glass rounded-2xl p-1 pr-3 hidden sm:flex items-center gap-2 hover:bg-white/5 transition">
+            <button className="glass rounded-2xl p-1 pr-3 hidden sm:flex items-center gap-2 hover:bg-primary/5 transition">
               <div className="size-7 rounded-xl bg-gradient-to-br from-warm to-coral grid place-items-center text-xs font-bold">S</div>
               <span className="text-xs font-semibold">Snehith</span>
             </button>
@@ -98,7 +98,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
                 to={i.to}
                 className={cn(
                   "flex flex-col items-center gap-0.5 px-3 py-2 rounded-2xl transition",
-                  active ? "bg-white/10 text-foreground" : "text-muted-foreground",
+                  active ? "bg-primary/10 text-foreground" : "text-muted-foreground",
                 )}
               >
                 <i.icon className="size-5" />
@@ -129,7 +129,7 @@ function NavItem({ to, label, icon: Icon, active }: { to: string; label: string;
       to={to}
       className={cn(
         "flex items-center gap-3 px-3 py-2.5 rounded-2xl text-sm font-medium transition",
-        active ? "bg-white/10 text-foreground shadow-inner" : "text-muted-foreground hover:text-foreground hover:bg-white/5",
+        active ? "bg-primary/10 text-foreground shadow-inner" : "text-muted-foreground hover:text-foreground hover:bg-primary/5",
       )}
     >
       <Icon className={cn("size-4", active && "text-primary")} />
