@@ -187,7 +187,7 @@ export function TButton({
   variant = "primary",
   className,
   ...props
-}: HTMLAttributes<HTMLButtonElement> & { variant?: BtnVariant; type?: "button" | "submit" }) {
+}: React.ButtonHTMLAttributes<HTMLButtonElement> & { variant?: BtnVariant }) {
   return <button className={cn(btnBase, btnVariants[variant], className)} {...props} />;
 }
 
